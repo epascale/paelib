@@ -17,11 +17,11 @@ def anomaly(t, periastron_time, eccentricity, period, full=False):
     t : scalar or array like
         time in commensurable units of time
     periastron_time : float
-        time of periastron, same unit as t
+        time of periastron, same units as t
     eccentricity : float
         orbital eccentricity
     period : float
-        orbital period. Same unit as t
+        orbital period. Same units as t
     full : bool
         when False (defult), returns true anomaly.
         when True, returns the tuple (true anomaly, eccentric anomaly, mean anomaly)
@@ -30,7 +30,6 @@ def anomaly(t, periastron_time, eccentricity, period, full=False):
     -------
     out : scalar or array like  
     '''  
-    
     
     kepler_eq = lambda E, M, e : E - e*np.sin(E) - M
     method = brentq
